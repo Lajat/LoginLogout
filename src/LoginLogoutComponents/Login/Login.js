@@ -6,19 +6,19 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
 
-        const usernameRef = React.createRef();
-        const passwordRef = React.createRef();
+        this.usernameRef = React.createRef();
+        this.passwordRef = React.createRef();
     }
     onSubmitClick = (e) => {
         e.preventDefault();
         // console.log(e.target.username.value);
         // console.log(e.target.password.value);
-        console.log(this.usernameRef.current.value);
+        // console.log(this.usernameRef.current.value);
         // console.log(this.passwordRef.current.value);
 
         const data ={
-            username: e.target.username.value,
-            password: e.target.password.value
+            username: this.usernameRef.current.value,
+            password: this.passwordRef.current.value
         }
 
         Axios.post('http://5dfb77b90301690014b8fbd7.mockapi.io/login',data)
